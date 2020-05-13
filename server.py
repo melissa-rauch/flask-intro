@@ -18,7 +18,13 @@ AWESOMENESS = [
 def start_here():
     """Home page."""
 
-    return "<!doctype html><html>Hi! This is the home page.</html>"
+    return """"<!doctype html>
+    <html>
+      Hi! This is the home page.
+      <div>
+        <a href = "/hello">Hello!</a>
+      </div>
+    </html>"""
 
 
 @app.route('/hello')
@@ -50,17 +56,17 @@ def greet_person():
 
     compliment = choice(AWESOMENESS)
 
-    return """
+    return f"""
     <!doctype html>
     <html>
       <head>
         <title>A Compliment</title>
       </head>
       <body>
-        Hi, {}! I think you're {}!
+        Hi, {player}! I think you're {compliment}!
       </body>
     </html>
-    """.format(player, compliment)
+    """
 
 
 if __name__ == '__main__':
